@@ -2,7 +2,7 @@
 Example: 'mkdir dir1'
 
 2.Change directory 
-Exmaple: 'cd dir1'
+Example: 'cd dir1'
 
 3.create script
 Example: 'nano TicTacToe.sh'
