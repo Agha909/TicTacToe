@@ -12,7 +12,7 @@ initializeTheGame()
     echo ""
     gamePlayer=1
     gameBoard=(- - - - - - - - -)
-    declairWinner=1
+    declareWinner=1
     echo "*****************************************************"
     echo "| |                                               | |"
     echo "| |                  Game Started                 | |"
@@ -62,7 +62,7 @@ findMatchedSymbols()
 {
    if [ ${gameBoard[$1]} != "-" ]&&[ ${gameBoard[$1]} == ${gameBoard[$2]} ]&&[ ${gameBoard[$2]} == ${gameBoard[$3]} ]
    then 
-	declairWinner=0
+	declareWinner=0
    fi
 }
 
@@ -80,7 +80,7 @@ checkForDraw()
     
     if [ $drawCheck -eq 1 ]
     then
-        declairWinner=2  # Use a new state to indicate a draw
+        declareWinner=2  # Use a new state to indicate a draw
     fi
 }
 
@@ -128,9 +128,9 @@ do
 	  checkTheWinner
 	  checkForDraw
 	  
-          if [ $declairWinner != 1 ]
+          if [ $declareWinner != 1 ]
 	  then
-	      if [ $declairWinner -eq 0 ]
+	      if [ $declareWinner -eq 0 ]
 	      then
 	          gamePlayer=$((gamePlayer%2+1))
 	          printTheBoard
@@ -140,7 +140,7 @@ do
 	          echo "| |               Player $gamePlayer ($symbol) Won                | |"
 	          echo "| |                                               | |"
 	          echo "====================================================="
-	      elif [ $declairWinner -eq 2 ]
+	      elif [ $declareWinner -eq 2 ]
 	      then
 	          printTheBoard
 	          echo "=====================================================" 
